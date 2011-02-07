@@ -1,0 +1,28 @@
+<?php echo $this->doctype(); ?>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en' xml:lang='en'>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <?php 
+ 
+ $this->headLink()->appendStylesheet('/css/screen.css');
+ $this->headLink()->appendStylesheet('/css/jPlayer.Blue.Monday.2.0.0/jplayer.blue.monday.css');
+ $this->headLink()->appendStylesheet('/css/global.css');
+ 
+ $this->headScript()->appendFile('/js/jquery-1.4.4.min.js');
+ $this->headScript()->appendFile('/js/jPlayer/jquery.jplayer.min.js');
+ 
+ echo $this->headTitle("MOgoy Band");
+ echo $this->headLink();
+ echo $this->headScript();
+
+ ?>
+
+
+</head>
+<body class="download">
+
+<?php echo $this->layout()->content ?>
+ 
+</body>
+</html>

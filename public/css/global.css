@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+div.jp-audio,
+div.jp-video {
+  /* Edit the font-size to counteract inherited font sizing.
+   * Eg. 1.25em = 1 / 0.8em
+   */
+  font-size:1.25em;
+}
+
+div.jp-progress{
+	width:200px;
+}
