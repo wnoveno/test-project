@@ -2,7 +2,27 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+    protected function _initAutoload() {
+        $objAutoloader = new Zend_Application_Module_Autoloader(array(
+                'namespace' => 'Application',
+                'basePath'  => dirname(__FILE__),
+            )
+        );
+        
+        $objFc = Zend_Controller_Front::getInstance();
+		$objFc->addModuleDirectory(APPLICATION_PATH . '/modules');
+		$objFc->setDefaultModule('frontend');
 
+		$objFc->registerPlugin(new Application_Plugin_AdminSetup());
+        $objFc->throwExceptions(false);
+        return $objAutoloader;
+    }
+	
+	protected function _initSession()
+	{
+		//may add default session values from ini here
+		Zend_Session::start();
+	}
 
 }
 
